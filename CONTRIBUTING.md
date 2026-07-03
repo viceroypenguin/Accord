@@ -23,8 +23,8 @@ Keep things short, simple and maintainable. No pointless abstractions or complic
 
 - Set up a bot account on the [Discord developer portal](https://discord.com/developers/applications)
     - Ensure you have the following priviledged gateway intents enabled:
-        - Presence Intent
         - Server Members Intent
+        - Message Content Intent
 - Clone/fork the repository from `main` branch
 - Get the Id of the Discord Guild you will be testing the bot in, for the purposes of Slash command updating
 - Get your bot token from the [Discord developer portal](https://discord.com/developers/applications)
