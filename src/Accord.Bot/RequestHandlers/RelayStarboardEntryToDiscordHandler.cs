@@ -82,10 +82,11 @@ public class RelayStarboardEntryToDiscordHandler(
         var embedBuilder = embedFactory.FromMessage(starredMessage);
         
         embedBuilder.WithColour(Color.Gold);
-        
+        var author = starredMessage.Author.ID.ToUserMention();
         var jumpLink = jumpLinkHelper.FromMessage(starredMessage);
         var markdownLink = $"#{channel.Name} [(click here)]({jumpLink})";
-        embedBuilder.AddField(new EmbedField("Posted in", $"**{markdownLink}**"));
+        embedBuilder.AddField(new EmbedField("Posted in", $"**{markdownLink}**", true));
+        embedBuilder.AddField(new EmbedField("Author", author, true));
         
         var embed = embedBuilder.Build();
         return embed.IsSuccess ? embed.Entity : null;
